@@ -7,7 +7,7 @@ export default function MovieUpdate(props){
         title: "",
         director: "",
         metascore: "",
-        stars: [],
+        stars: [""],
     })
 
     useEffect(() => {
@@ -71,6 +71,7 @@ export default function MovieUpdate(props){
                     onChange={handleChange}
 				/>
 
+{/* Has to modify the last input - when I try to change actor's name it causes error. Has to restart listening to port.  */}
                 <input
                     type="text"
                     name="stars"
