@@ -14,6 +14,8 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  width: 500px;
+  text-align: center;
 }
 
 .movie-director {
@@ -74,4 +76,60 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.edit-button {
+  position: absolute;
+  top: 25px;
+  right: 125px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
+
+.delete-button {
+  position: absolute;
+  top: 25px;
+  right: 225px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
+
+.movie-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  width: 75%;
+}
+
+.update-form{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.update-movie{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.update-input{
+  height: 25px;
+  width: 500px;
+  font-size: 15px;
+  color: gray;
+  margin: 5px;
+}
+
+.update-button{
+  height: 25px;
+  width: 250px;
+  font-size: 15px;
+  margin: 5px auto;
 }
