@@ -7,7 +7,7 @@ export default function MovieUpdate(props){
         title: "",
         director: "",
         metascore: "",
-        stars: [""],
+        stars: [],
     })
 
     useEffect(() => {
@@ -41,18 +41,19 @@ export default function MovieUpdate(props){
     }
 
     return (
-        <div>
+        <div className="update-movie">
             <h1>Update movie</h1>
 
             <p>Please pay attention that changes can't be undone.</p>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="update-form">
                 <input
                     type="text"
                     name="title"
                     placeholder="Title"
                     value={movie.title}
                     onChange={handleChange}
+                    className="update-input"
 				/>
 
                 <input
@@ -61,6 +62,7 @@ export default function MovieUpdate(props){
                     placeholder="Director"
                     value={movie.director}
                     onChange={handleChange}
+                    className="update-input"
 				/>
 
                 <input
@@ -69,18 +71,28 @@ export default function MovieUpdate(props){
                     placeholder="Metascore"
                     value={movie.metascore}
                     onChange={handleChange}
+                    className="update-input"
 				/>
 
-{/* Has to modify the last input - when I try to change actor's name it causes error. Has to restart listening to port.  */}
-                <input
-                    type="text"
-                    name="stars"
-                    placeholder="Stars"
-                    value={movie.stars}
-                    onChange={handleChange}
-				/>
+{/* Has to modify the last input - when I try to change actor's name it causes error. Has to restart listening to port. Update: now it's says "movie.stars.map isn't a function" */}
+                <div>
+                    <h3>Stars:</h3>
+                {movie.stars &&
+                movie.stars.map(star => (
+                    <div key={star.id}>
+                        <input
+                        type="text"
+                        name="stars"
+                        placeholder="Stars"
+                        value={star}
+                        onChange={handleChange}
+                        className="update-input"
+                        />
+                    </div>
+                ))}
+                </div>
 
-                <button type="submit">Save Changes</button>
+                <button type="submit" className="update-button">Save Changes</button>
             </form>
         </div>
     )
